@@ -4,7 +4,9 @@
 
 - 将虚拟机配置为双网卡模式（NAT&host-only）
 
-  <img src="nat.png" alt="image00" style="zoom:38%;" /><img src="C:\Users\95123\Desktop\exp\host-only.PNG" alt="img01" style="zoom:38%;" />
+  ![img00](nat.PNG)
+
+  ![img01](host-only.PNG)
 
 - 打开虚拟机的网卡二并修改配置信息
 
@@ -12,25 +14,25 @@
 sudo vi /etc/netplan/01-netcfg.yaml
 ```
 
-<img src="C:\Users\95123\Desktop\exp\sudo.PNG" alt="img02"  />
+![img02](sudo.PNG)
 
 修改结果可用`ifconf ig`查看，结果如下图所示：
 
-<img src="C:\Users\95123\Desktop\exp\binet.PNG" alt="img03"  />
+![img03](binet.PNG)
 
 ### 定制安装OpenSSH Server
 
 - 下载PuTTY，填写虚拟机enp0s8的ip地址，自定义名字以后保存
 
-<img src="C:\Users\95123\Desktop\exp\putty.PNG" alt="img04" style="zoom:80%;" />
+<img src="putty.PNG" alt="img04" style="zoom:80%;" />
 
 - 安装openssh-server以实现通过PuTTY登入的目的
 
-  ![img06](C:\Users\95123\Desktop\exp\installSSHserver.PNG)
+  ![img05](installSSHserver.PNG)
 
 - 通过PuTTY登入linux
 
-  ![img07](C:\Users\95123\Desktop\exp\login.PNG)
+  ![img06](login.PNG)
 
 ### 安装镜像
 
@@ -40,7 +42,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
   `scp path_ubuntu-18.04.4-server-amd64.iso username@ip:`
 
-  ![img08](C:\Users\95123\Desktop\exp\Inkedtrans_LI.jpg)
+  ![img07](Inkedtrans_LI.jpg)
 
 - 由于loopdir具有操作权限，若直接运行`mount -o loop ubuntu-16.04.1-server-amd64.iso loopdir`会报错，所以可在该语句前添加`sudo`以使用root权限进行操作或者修改loopdir的权限`sudo chmod 777 loopdir`
 
@@ -48,7 +50,7 @@ sudo vi /etc/netplan/01-netcfg.yaml
 
 - 同步光盘内容到目标工作目录：`rsync -av loopdir/ cd`
 
-  ![img09](C:\Users\95123\Desktop\exp\rsync.PNG)
+  ![img08](rsync.PNG)
 
 - 卸载iso镜像：`umount loopdir`（若遇权限问题参考上文处理办法）
 
@@ -93,8 +95,8 @@ sudo vi /etc/netplan/01-netcfg.yaml
               -o $IMAGE $BUILD
   ```
 
-  ![img10](C:\Users\95123\Desktop\exp\mkisofs.PNG)
+  ![img09](mkisofs.PNG)
 
   注意：此处需要修改custom.iso的权限，并安装genisoimage
 
-  ![image11](C:\Users\95123\Desktop\exp\extra_install.PNG)
+  ![image10](extra_install.PNG)
