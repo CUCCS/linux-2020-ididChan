@@ -1,0 +1,78 @@
+<<<<<<< HEAD
+language: bash
+
+before_install:
+        - sudo apt-get update && sudo apt-get install -y shellcheck
+        - sudo apt-get install imagemagick
+        - wget "https://c4pr1c3.gitee.io/linuxsysadmin/exp/chap0x04/worldcupplayerinfo.tsv"
+        - wget "https://c4pr1c3.gitee.io/linuxsysadmin/exp/chap0x04/web_log.tsv.7z"
+        - sudo apt-get install p7zip-full
+        - 7z x -ot web_log.tsv.7z
+
+script:
+        - echo "task 1"
+        - echo ":=============================================:"
+        - bash image.sh ./img -h
+        - bash image.sh ./img -a 75%
+        - bash image.sh ./img -b 75%
+        - bash image.sh ./img -m "watermark"
+        - bash image.sh ./img -p "re_"
+        - bash image.sh ./img -s ".txt"
+        - bash image.sh ./img -t
+        - echo "task 2"
+        - echo ":=============================================:"
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -h
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -a
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -b
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -c
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -d
+        - echo "task 3"
+        - echo ":=============================================:"
+        - bash data0x02.sh ./data/web_log.tsv -h
+        - bash data0x02.sh ./data/web_log.tsv -a
+        - bash data0x02.sh ./data/web_log.tsv -b
+        - bash data0x02.sh ./data/web_log.tsv -c
+        - bash data0x02.sh ./data/web_log.tsv -d
+        - bash data0x02.sh ./data/web_log.tsv -e
+        - bash data0x02.sh ./data/web_log.tsv -f
+
+notifications:
+  email:
+    on_success: never
+=======
+language: bash
+
+before_install:
+        - sudo apt-get update && sudo apt-get install -y shellcheck
+
+script:
+        - echo "task 1"
+        - echo ":=============================================:"
+        - bash image.sh ./img -h
+        - bash image.sh ./img -a 75%
+        - bash image.sh ./img -b 75%
+        - bash image.sh ./img -m "watermark"
+        - bash image.sh ./img -p "re_"
+        - bash image.sh ./img -s ".txt"
+        - bash image.sh ./img -t
+        - echo "task 2"
+        - echo ":=============================================:"
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -h
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -a
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -b
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -c
+        - bash data0x01.sh ./data/worldcupplayerinfo.tsv -d
+        - echo "task 3"
+        - echo ":=============================================:"
+        - bash data0x02.sh ./data/web_log.tsv -h
+        - bash data0x02.sh ./data/web_log.tsv -a
+        - bash data0x02.sh ./data/web_log.tsv -b
+        - bash data0x02.sh ./data/web_log.tsv -c
+        - bash data0x02.sh ./data/web_log.tsv -d
+        - bash data0x02.sh ./data/web_log.tsv -e
+        - bash data0x02.sh ./data/web_log.tsv -f
+
+notifications:
+  email:
+    on_success: never
+>>>>>>> 0fab63c9912ba564d88188565e1f391cf8da7883
