@@ -36,7 +36,12 @@ function image_compress_resolution {
 COMMENT
 function add_watermark {
         for img in `ls`;do
-                mogrify -pointsize 16 -fill black -weight bolder -gravity southeast -annotate +5+5 $1 $img
+                convert $img -pointsize 20 \
+          -draw "gravity south \
+                 fill black  text 0,12 $1 \
+                 fill white  text 1,11 $1 " \
+                $1
+                # mogrify -pointsize 16 -fill black -weight bolder -gravity southeast -annotate +5+5 $1 $img
                 echo "watermark is successfully added on $img"
         done
 }
