@@ -1,0 +1,16 @@
+server {
+    listen 127.0.0.1:8006;
+    server_name dvwa.sec.cuc.edu.cn;
+
+    root /var/www/dvwa/;
+    index index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php\$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+}

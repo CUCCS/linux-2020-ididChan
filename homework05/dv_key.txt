@@ -1,0 +1,5 @@
+在您的网站提供给用户的 HTML 代码中使用此网站密钥：
+6LezqfgUAAAAAFTEDlWAoDzPUMB0-SRlj8hm3SD4
+
+此密钥用于您的网站和 reCAPTCHA 之间的通信：
+6LezqfgUAAAAAP0NcLJljczZrbjg5AikgIDzvO9K
