@@ -1,3 +1,3 @@
-# Exp04 Shell脚本编程
+# Exp06 Shell脚本编程练习进阶
 
-[![Build Status](https://travis-ci.com/ididChan/ShellProgramming.svg?token=y3VSyaqSAaFzpzZR6WsU&branch=master)](https://travis-ci.com/ididChan/ShellProgramming)
+FTP、NFS、DHCP、DNS、Samba服务器的自动安装与自动配置
