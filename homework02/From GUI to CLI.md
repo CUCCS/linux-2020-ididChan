@@ -17,11 +17,11 @@
 
   - 安装asciinema：`sudo apt-get install asciinema`
 
-    ![install](.\img\install.PNG)
+    ![install](./img/install.PNG)
 
   - 关联本地帐号与在线账号：`asciinema auth`
 
-    ![associate](./img/associate.png)
+    ![associate](./img/associate.PNG)
 
   - **用法**
 
